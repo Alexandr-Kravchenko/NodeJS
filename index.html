@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Intro</title>
+</head>
+<style>
+    button:hover {
+        border-color: red;
+    }
+</style>
+<body>
+    <button> Hover me</button>
+    <script>
+        //alert('Hello world!');
+        console.log('Hello2');
+        //setTimeout(function () { alert('Aga, aga, kuda?') }, 2500)
+    </script>
+    <script>
+        let name = 'Vova';
+        console.log(name);
+        name = 'Ivan';
+        console.log(name);
+        name = 12 + 12;
+        console.log(name);
+    </script>
+    <script>
+        let user = {
+            firstName: 'Oleg',
+            lastName: 'Pankratov',
+            email: 'test@mail.com',
+            toString: function () {
+                return(`${this.firstName} ${this.lastName} <${this.email}>`);
+            }
+        };
+        user.firstName += "os";
+        user['email'] = 'test1@mail.com';
+        let colors = { 
+            red: '#ff0000', 
+            black: '#000000', 
+            white: '#ffffff' 
+        }
+        for (let name in colors) {
+            console.log(name + ' has code ' + colors[name].toUpperCase());
+        }
+        console.log(Object.keys(colors));
+        for (let name in Object.keys(colors)) {
+            console.log(name);
+            //console.log(name + ' has code ' + colors[name].toUpperCase());
+        }
+    </script>
+    <script>
+        printContact(user);
+        var testPrint = function printContact(contact) {
+            console.log(`${contact.firstName} ${contact.lastName} <${contact.email}>`);
+        };
+        function printContact(contact) {
+            console.log(`${contact.firstName} ${contact.lastName} <${contact.email}>`);
+        };
+        testPrint(user);
+    </script>
+    <script>
+        console.log('' == []);
+        console.log('' === []);
+        console.log(undefined === user);
+        console.log('undefined == null', undefined == null);
+        console.log('undefined === null', undefined === null);
+    </script>
+    <script>
+        console.log(user.toString());
+    </script>
+    <script>
+        class Contact {
+            constructor(firstName, lastName, email) {
+                if(typeof firstName === 'object') {
+                    Object.assign(this, firstName);
+                } else {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.email = email;
+                }
+            }
+            toString() {
+                return (`${this.firstName} ${this.lastName} <${this.email}>`) 
+            }
+        }
+        let Ivan = new Contact('Ivan', 'Ivanov', 'testik@mail.com');
+        let Petr = new Contact({
+            firstName: 'Petr',
+            lastName: 'Pankratov',
+            email: 'test@mail.com'
+        });
+        console.log(Petr.toString());
+    </script>
+    <script>
+        console.log(Number(Math.PI.toFixed(3)));
+    </script>
+</body>
+</html>
