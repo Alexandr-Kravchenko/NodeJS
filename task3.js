@@ -4,7 +4,7 @@ let faktorial = function (number) {
         let prev = i - 1 >= 1 ? i - 1 : i 
         result *= prev
     }
-    console.log(result);
+    return result
 }
 
-faktorial(10);
+console.log(faktorial(5));

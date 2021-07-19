@@ -3,9 +3,10 @@ let sumOfRange = function(number1, number2) {
     for (let i = number1; i <= number2; i += 1 ){
         range.push(i)
     }
-    console.log(range.reduce((prevNumber, currentNumber) => {
+    let result = range.reduce((prevNumber, currentNumber) => {
         return prevNumber + currentNumber
-    }));
+    });
+    return result
 }
 
-sumOfRange(5, 7);
+console.log(sumOfRange(5, 7));
