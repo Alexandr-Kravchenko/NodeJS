@@ -1,4 +1,4 @@
-let faktorial = function (number) {
+let factorial = function (number) {
     let result = number;
     for (let i = number; i >= 1; i -= 1) {
         let prev = i - 1 >= 1 ? i - 1 : i 
@@ -7,4 +7,6 @@ let faktorial = function (number) {
     return result
 }
 
-console.log(faktorial(5));
+// console.log(factorial(5));
+
+export { factorial };

@@ -9,4 +9,6 @@ let sumOfRange = function(number1, number2) {
     return result
 }
 
-console.log(sumOfRange(5, 7));
+//console.log(sumOfRange(5, 7));
+
+export { sumOfRange };
